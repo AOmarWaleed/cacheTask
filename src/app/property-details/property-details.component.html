@@ -1,0 +1,23 @@
+@if (isLoading) {
+
+<app-loader
+  parentClasses="position-fixed top-0 start-0 end-0 bottom-0 z-3 d-flex justify-content-center align-items-center bg-light"
+></app-loader>
+
+}@else if (err) {
+
+<h2 class="text-center my-3">pls try later</h2>
+
+}@else if (propertyData) {
+
+<div class="min-vh-100 d-flex justify-content-center align-items-center">
+  <div class="shadow text-bg-info p-3 rounded-2">
+    <h1>Property Details</h1>
+    <p>Property ID: {{ id }}</p>
+    <p>Property Name: {{ propertyData.name }}</p>
+    <p>Property address: {{ propertyData.address }}</p>
+    <p>Property price: {{ propertyData.price }}</p>
+    <p>Property status: {{ propertyData.status }}</p>
+  </div>
+</div>
+}
